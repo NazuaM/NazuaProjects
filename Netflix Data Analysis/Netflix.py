@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load and clean data
-df = pd.read_csv('netflix.csv')
+df = pd.read_csv('netflix_data.csv')
 df_cleaned = df.dropna()
 df_new = df_cleaned.assign(genre=df_cleaned['genres'].str.split(',')).explode('genre').drop(columns=['genres'])
 
